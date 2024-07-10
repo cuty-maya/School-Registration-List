@@ -12,12 +12,30 @@ require_once "./queries/selectStudents.php";
     <title>School Registration List</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
-
 </head>
-<body class="body">
+<body>
     
-  <div class="container">
+  <div class="container-fluid">
+
+  <header class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow">
+    <div class="bg-dark text-white">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+    <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small"> 
+        <li>
+            <a href="./index.php" class="nav-link text-white">Students</a>
+        </li>
+        <li >
+            <a href="./teachers/teachers.php" class="nav-link text-white">Teachers</a>
+        </li>
+        <li>
+            <a href="./parent.php" class="nav-link 
+            text-white">Parent</a>
+        </li>
+    </ul>
+    </div>
+    </div>
+</header>
+
     <div id="div1">
         <h1 style="color:red">Madrasatul Al Muadh Al Islamiyah</h1>
     </div>
@@ -87,6 +105,7 @@ require_once "./queries/selectStudents.php";
             <th>Date Of Admission</th>
             <th>createdAt</th>
             <th>isActive</th>
+            <th>Action</th>
         </thead>
         <tbody >
             <?php 
@@ -107,6 +126,7 @@ require_once "./queries/selectStudents.php";
                      
                 
                 ?></td>
+                <td><a href="./queries/deleteStudents.php?id=<?php echo $rows['id'];?>">Delete</td>
               </tr>   
               <?php
               };
